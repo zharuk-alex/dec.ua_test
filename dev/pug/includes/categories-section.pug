@@ -1,0 +1,16 @@
+section.categories-section
+  .container
+    .row
+      .col.section_header.text-uppercase
+        h1= header.title
+      each block in metablocks
+        .col.categories-section__block.category-title
+          a(href= block.href alt= block.displayName).category-title__link 
+           h5 #{block.displayName}
+        if block.image !== undefined
+          .col.categories-section__block.category-image(style={
+            'background': 'url(images/'+block.image+')', 
+            'background-size': 'cover',
+            'background-position': 'center',
+            'background-repeat': 'no-repeat'
+          })

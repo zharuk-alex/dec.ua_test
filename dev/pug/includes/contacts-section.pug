@@ -1,0 +1,26 @@
+section.contacts-section
+  .container
+    .row
+      .col-12.col-md-4
+        h2= contacts.title
+        p= contacts.description
+      form(id="contacts-form").col-12.col-md-8
+        .row
+          .col
+            .form-group
+              label Имя:
+              input(type="text" name="name" required).contacts-form-control
+            .form-group
+              label Телефон:
+              input(type="text" name="phone" required).contacts-form-control
+            .form-group
+              label E-mail
+              input(type="text" name="email" required).contacts-form-control
+          .col.d-flex.flex-column
+            .form-group.h-100.d-flex.flex-column.message-area
+              label Сообщение:
+              textarea(type="text" name="comment" required).contacts-form-control.h-100
+          .col-12
+            .form-group.text-right
+              button.btn-submit.ml-auto Подать заявку 
+      

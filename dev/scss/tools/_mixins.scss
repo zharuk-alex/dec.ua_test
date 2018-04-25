@@ -1,0 +1,41 @@
+@function calculateRem($size) {
+	$remSize: ($size / 16px);
+	@return #{$remSize}rem;
+}
+
+@mixin font-size($fs-map) {
+  @each $fs-breakpoint, $fs-font-size in $fs-map {
+    @if $fs-breakpoint == null {
+      font-size: $fs-font-size;
+    }
+    @else {
+      @media screen and (min-width: $fs-breakpoint) {
+        font-size: $fs-font-size;
+      }
+    }
+  }
+}
+
+@mixin blocksize ($block_size) {
+  height: $block_size;
+  width: $block_size;
+  min-height: $block_size;
+  min-width: $block_size;
+  max-height: $block_size;
+  max-width: $block_size;
+  &:after{
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
+}
+
+@mixin titlesize($title_size) {
+  width: $title_size;
+  min-width: $title_size;
+  max-width: $title_size;
+  &:after{
+    content: "";
+    display: block;
+  }
+}
