@@ -62,8 +62,12 @@ body{
       font-weight: bold;
       top: 30px;
       left: 1rem;
-      @include media-breakpoint-down(sm){
-        font-size: calculateRem(12px);
+      @include media-breakpoint-only(sm){
+        font-size: calculateRem(14px);
+      }
+      @include media-breakpoint-only(xs){
+        font-size: calculateRem(11px);
+        left: 0.5rem;
       }
     }
   }
