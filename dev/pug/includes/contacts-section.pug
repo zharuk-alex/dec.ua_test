@@ -1,12 +1,12 @@
 section.contacts-section
-  .container
+  .container-fluid
     .row
-      .col-12.col-md-4
+      .col-12.col-lg-4
         h2= contacts.title
         p= contacts.description
-      form(id="contacts-form").col-12.col-md-8
+      form(id="contacts-form").col-12.col-lg-8
         .row
-          .col
+          .col.col-12.col-sm-6
             .form-group
               label Имя:
               input(type="text" name="name" required).contacts-form-control
@@ -16,7 +16,7 @@ section.contacts-section
             .form-group
               label E-mail
               input(type="text" name="email" required).contacts-form-control
-          .col.d-flex.flex-column
+          .col.col-sm-6.d-flex.flex-column
             .form-group.h-100.d-flex.flex-column.message-area
               label Сообщение:
               textarea(type="text" name="comment" required).contacts-form-control.h-100

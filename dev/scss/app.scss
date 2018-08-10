@@ -2,14 +2,25 @@
 @import "tools/variables";
 @import "tools/mixins";
 @import "components/forms";
-// @import '../db/db.json'
 
+$xl_block_size: calc(100%/7);
+$lg_block_size: calc(100%/7);
+$md_block_size: calc(100%/5);
+$sm_block_size: calc(100%/3);
+
+$xl_title_size: calc(100%/7*2);
+$lg_title_size: calc(100%/7*2);
+$md_title_size: calc(100%/5*4);
+$sm_title_size: calc(100%/5*2);
+$xs_title_size: calc(100%);
 
 body{
   font-family: Calibri, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: calculateRem(16px);
   a:hover{
     text-decoration: none;
+  }
+  .container-fluid{
+    max-width: 1170px;
   }
 }
 
@@ -24,10 +35,18 @@ body{
     @include media-breakpoint-down(md){
       @include titlesize($md_title_size);
     }
+    @include media-breakpoint-only(sm){
+      @include titlesize($sm_title_size);
+    }
+    @include media-breakpoint-only(xs){
+      @include titlesize($xs_title_size);
+    }
     h1{
-      position: absolute;
-      padding: calculateRem(30px) 0 0 calculateRem(30px);
       font-size: calculateRem(48px);
+      padding: 12px;
+      @include media-breakpoint-only(sm){
+        font-size: calculateRem(28px);
+      }
       @include media-breakpoint-only(xs){
         font-size: calculateRem(36px);
         padding: calculateRem(16px) 0 0 calculateRem(16px);
@@ -38,6 +57,7 @@ body{
   }
   .categories-section__block{
     padding: 0px;
+
     @include blocksize($xl_block_size);
     @include media-breakpoint-down(lg){
       @include blocksize($lg_block_size);
@@ -54,20 +74,26 @@ body{
       background: darken(#0cb1aa, 15%);
     }
     h5{
-      position: absolute;
       width: auto;
+      position: absolute;
       text-transform: uppercase;
       color: #fff;
-      font-size: calculateRem(16px);
       font-weight: bold;
-      top: 30px;
-      left: 1rem;
+      top: 0;
+      left: 0;
+      padding: 30px 0 0 12px;
+      font-size: 16px;
+      @include media-breakpoint-down(lg){
+        font-size: 14px;
+      }
+      @include media-breakpoint-down(md){
+        font-size: 13px;
+      }
       @include media-breakpoint-only(sm){
-        font-size: calculateRem(14px);
+        font-size: 12px;
       }
       @include media-breakpoint-only(xs){
-        font-size: calculateRem(11px);
-        left: 0.5rem;
+        font-size: 10px;
       }
     }
   }
@@ -87,6 +113,16 @@ body{
     margin: 0;
     text-transform: uppercase;
     color: #fff;
+    font-size: 14px;
+  }
+
+  @include media-breakpoint-down(sm){
+    .information-section__percents{
+      font-size: 18px;
+    }
+    .information-section__text{
+      font-size: 14px;
+    }
   }
 }
 
